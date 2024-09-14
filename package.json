@@ -1,0 +1,17 @@
+{
+  "name": "my-app",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "turbo:dev": "turbo run dev",
+    "turbo:build": "turbo run build",
+    "turbo:check-types": "turbo  run check-types",
+    "turbo:lint": "turbo lint"
+  },
+  "devDependencies": {
+    "turbo": "^2.1.2"
+  },
+  "packageManager": "pnpm@9.4.0"
+}
