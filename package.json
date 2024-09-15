@@ -1,9 +1,6 @@
 {
+  "private": true,
   "name": "my-app",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "scripts": {
     "turbo:dev": "turbo run dev",
     "turbo:build": "turbo run build",
