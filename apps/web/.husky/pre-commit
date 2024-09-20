@@ -1,1 +1,3 @@
 pnpm run pre-push
+
+exit 1
