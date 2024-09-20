@@ -2,9 +2,6 @@
 const config = {
   "root": true,
   "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "project": true
-  },
   "plugins": [
     "@typescript-eslint"
   ],
