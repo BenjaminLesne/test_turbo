@@ -36,6 +36,28 @@ const config = {
         }
       }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": "e2e/**",
+      "extends": "plugin:playwright/recommended",
+      rules:{
+        "playwright/no-skipped-test": [
+          "error",
+          {
+            "allowConditional": true
+          }
+        ],
+
+        "playwright/expect-expect": [
+          "error",
+          {
+            "assertFunctionNames": ["testScreenshot"]
+          }
+        ]
+        
+      }
+    }
+  ]
 }
 module.exports = config;
