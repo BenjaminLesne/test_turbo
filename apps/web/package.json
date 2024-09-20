@@ -9,7 +9,8 @@
     "lint": "next lint",
     "start": "next start",
     "check-types": "tsc --noEmit",
-    "prepare": "husky"
+    "prepare": "husky",
+    "pre-push": "sh ./scripts/prevent-.only-page.pause-push.sh"
   },
   "dependencies": {
     "@repo/eslint-config": "workspace:*",
