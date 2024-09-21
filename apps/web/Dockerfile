@@ -1,14 +1,16 @@
 FROM node:18-alpine AS base
 
-RUN apk update \
-    apk add --no-cache libc6-compat \
-    npm install -g pnpm turbo
+
+# hadolint ignore=DL3018
+RUN apk update && \
+    apk add --no-cache libc6-compat && \
+    npm install -g pnpm@9.11.0 turbo@2.1.2
 
 FROM base AS builder
 WORKDIR /app
 
-COPY package.json pnpm-lock.yaml turbo.json ./
-RUN pnpm install
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml turbo.json ./
+RUN pnpm install --workspace-root && pnpm install --filter web
 
 COPY . .
 
