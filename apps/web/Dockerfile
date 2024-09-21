@@ -1,34 +1,36 @@
-# in compose.yaml, the context for this Dockerfile is the root git repo
 FROM node:18-alpine AS base
 
+RUN apk update \
+    apk add --no-cache libc6-compat \
+    npm install -g pnpm turbo
+
 FROM base AS builder
-RUN apk update
-RUN apk add --no-cache libc6-compat
 WORKDIR /app
-RUN npm install -g pnpm turbo
+
+COPY package.json pnpm-lock.yaml turbo.json ./
+RUN pnpm install
+
+
 COPY . .
+
+
 RUN turbo prune web --docker
 
 FROM base AS installer
-RUN apk update
-RUN apk add --no-cache libc6-compat
-RUN npm install -g pnpm turbo
-
 WORKDIR /app
 
-# Install dependencies using PNPM
-COPY --from=builder /app/out/json/ .
+COPY --from=builder /app/out/json/ ./
 RUN pnpm install
 
-# Build the project
-COPY --from=builder /app/out/full/ .
+COPY --from=builder /app/out/full/ ./
 RUN pnpm turbo build --filter=web...
 
 FROM base AS runner
 WORKDIR /app
 
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
+RUN addgroup --system --gid 1001 nodejs \
+    && adduser --system --uid 1001 nextjs
+
 USER nextjs
 
 COPY --from=installer --chown=nextjs:nodejs /app/apps/web/.next/standalone ./
