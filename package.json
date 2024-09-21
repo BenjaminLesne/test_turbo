@@ -5,9 +5,11 @@
     "turbo:dev": "turbo run dev",
     "turbo:build": "turbo run build",
     "turbo:check-types": "turbo  run check-types",
-    "turbo:lint": "turbo lint"
+    "turbo:lint": "turbo lint",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "husky": "^9.1.6",
     "turbo": "^2.1.2"
   },
   "packageManager": "pnpm@9.4.0"

@@ -1,0 +1,28 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "eslint \"src/**/*.ts\" --fix",
+    "check-types": "tsc --noEmit",
+    "prepare": "cd ../.. && husky apps/web/.husky",
+    "pre-push": "sh ./scripts/prevent-.only-page.pause-push.sh"
+  },
+  "dependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@t3-oss/env-nextjs": "^0.10.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.47.2",
+    "@types/eslint": "^8.56.10",
+    "@types/node": "^20.14.10",
+    "@typescript-eslint/eslint-plugin": "^8.1.0",
+    "@typescript-eslint/parser": "^8.1.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-playwright": "^1.6.2",
+    "prettier": "^3.3.2",
+    "typescript": "^5.5.3"
+  },
+  "packageManager": "pnpm@9.11.0"
+}
