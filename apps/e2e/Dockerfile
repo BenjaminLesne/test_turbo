@@ -1,6 +1,6 @@
 # the context of this dofkcerfile is the root git repo
 
-FROM mcr.microsoft.com/playwright:v1.46.0-noble
+FROM mcr.microsoft.com/playwright:v1.47.2-jammy 
 # TODO:
 # make it work so we can run update snapshots on it
 # add to scripts: e2e:update:snapshots
