@@ -10,7 +10,6 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml turbo.json ./
 RUN pnpm install
 
-
 COPY . .
 
 
