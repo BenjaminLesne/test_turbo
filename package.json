@@ -6,7 +6,8 @@
     "turbo:build": "turbo run build",
     "turbo:check-types": "turbo  run check-types",
     "turbo:lint": "turbo lint",
-    "prepare": "husky"
+    "prepare": "husky ./.husky",
+    "pre-push": "sh ./scripts/prevent-.only-page.pause-push.sh"
   },
   "devDependencies": {
     "husky": "^9.1.6",
