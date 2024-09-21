@@ -7,9 +7,9 @@ FROM mcr.microsoft.com/playwright:v1.46.0-noble
 
 WORKDIR /code
 
-COPY ./pnpm-lock.json ./package.json ./pnpm-workspace.yaml ./
+COPY ./pnpm-lock.yaml ./package.json ./pnpm-workspace.yaml ./
 
-RUN npm install -g pnpm@9.11 && pnpm install
+RUN npm install -g pnpm@9.11 
 
 WORKDIR /code/apps/web/src/lib
 COPY ./apps/web/src/lib .
@@ -17,8 +17,12 @@ COPY ./apps/web/src/lib .
 WORKDIR /code/apps/web/
 COPY ./apps/web/package.json .
 
+WORKDIR /code/packages/eslint-config
+COPY ./packages/eslint-config .
+
 WORKDIR /code/apps/e2e
 COPY ./apps/e2e .
+RUN pnpm install
 
 
 CMD ["npx", "playwright", "test", "--update-snapshots"]

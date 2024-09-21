@@ -24,9 +24,9 @@ services:
     environment:
       - CI='true'
       - BASE_URL=http://web:${WEB_PORT}
-    depends_on:
-      web:
-        condition: service_healthy
+    # depends_on:
+    #   web:
+    #     condition: service_healthy
     volumes:
       - ./apps/e2e/src/tests:/code/apps/e2e/src/tests
       - ./apps/e2e/playwright-report:/code/apps/e2e/playwright-report

@@ -1,5 +1,6 @@
-import { test, expect } from '@playwright/test';
-import { testScreenshot, waitLoadingEnds } from './utils/tests';
+import { expect } from '@playwright/test';
+import { testScreenshot, waitLoadingEnds } from '../lib/utils/tests';
+import { test } from '../lib/utils/fixtures';
 
 test('has title', async ({ page }) => {
   await page.goto('https://playwright.dev/');
