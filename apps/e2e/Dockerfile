@@ -1,22 +1,24 @@
-FROM mcr.microsoft.com/playwright:v1.45.1-jammy
+# the context of this dofkcerfile is the root git repo
+
+FROM mcr.microsoft.com/playwright:v1.46.0-noble
 # TODO:
 # make it work so we can run update snapshots on it
 # add to scripts: e2e:update:snapshots
 
-WORKDIR /code/web
+WORKDIR /code
 
-COPY ./package-lock.json ./package.json ./
+COPY ./pnpm-lock.json ./package.json ./pnpm-workspace.yaml ./
 
 RUN npm install -g pnpm@9.11 && pnpm install
 
-WORKDIR /code/frontend/src/lib
-COPY ./frontend/src/lib .
+WORKDIR /code/apps/web/src/lib
+COPY ./apps/web/src/lib .
 
-WORKDIR /app/frontend/
-COPY ./frontend/package.json .
+WORKDIR /code/apps/web/
+COPY ./apps/web/package.json .
 
-WORKDIR /app/e2e
-COPY ./e2e .
+WORKDIR /code/apps/e2e
+COPY ./apps/e2e .
 
 
 CMD ["npx", "playwright", "test", "--update-snapshots"]

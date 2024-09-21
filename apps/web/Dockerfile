@@ -1,7 +1,5 @@
+# in compose.yaml, the context for this Dockerfile is the root git repo
 FROM node:18-alpine AS base
-
-# This Dockerfile is copy-pasted into our main docs at /docs/handbook/deploying-with-docker.
-# Make sure you update both files!
 
 FROM base AS builder
 RUN apk update

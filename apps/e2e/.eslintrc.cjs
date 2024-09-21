@@ -8,8 +8,8 @@ const config = {
   "extends": [
     "plugin:@typescript-eslint/recommended-type-checked",
     "plugin:@typescript-eslint/stylistic-type-checked",
-    "plugin:playwright/recommended",
     "@repo/eslint-config/base.cjs",
+    "plugin:playwright/recommended",
   ],
   "rules": {
     "@typescript-eslint/array-type": "off",

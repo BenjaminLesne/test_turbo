@@ -8,7 +8,8 @@
     "turbo:lint": "turbo lint",
     "prepare": "husky ./.husky",
     "pre-push": "sh ./scripts/prevent-.only-page.pause-push.sh",
-    "docker:web": "docker compose up web"
+    "docker:web": "docker compose up web",
+    "e2e:update:snapshots": "docker compose up e2e --build --exit-code-from=e2e"
   },
   "devDependencies": {
     "husky": "^9.1.6",
