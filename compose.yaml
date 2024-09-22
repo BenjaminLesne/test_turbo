@@ -9,11 +9,11 @@ services:
       test:
         [
           "CMD-SHELL",
-          "curl --fail http://localhost:${WEB_PORT}/health || exit 1"
+          "curl --fail http://localhost:3000/health || exit 1"
         ]
       interval: 5s
       timeout: 5s
-      retries: 10
+      retries: 5
   e2e:
     build:
       context: .
