@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "my-app",
+  "name": "marche-public",
   "scripts": {
     "turbo:dev": "turbo run dev",
     "turbo:build": "turbo run build",
