@@ -21,5 +21,4 @@ WORKDIR /code/apps/e2e
 COPY ./apps/e2e .
 RUN pnpm install --filter e2e
 
-
-CMD ["npx", "playwright", "test", "--update-snapshots"]
+ENTRYPOINT ["npx", "playwright", "test"]

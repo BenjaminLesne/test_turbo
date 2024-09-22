@@ -1,0 +1,2 @@
+- [ ] Temporary work is deleted (commented code, useless console logs, etc.).
+- [ ] Tests have been added or updated when necessary.
