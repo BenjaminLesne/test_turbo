@@ -9,7 +9,7 @@ services:
       test:
         [
           "CMD-SHELL",
-          "curl --fail http://localhost:3000/health || exit 1"
+          "curl --fail http://localhost:${WEB_PORT}/health || exit 1"
         ]
       interval: 5s
       timeout: 5s
@@ -24,7 +24,7 @@ services:
       test:
         [
           "CMD-SHELL",
-          "curl --fail http://localhost:3001/health || exit 1"
+          "curl --fail http://localhost:${API_PORT}/health || exit 1"
         ]
       interval: 5s
       timeout: 5s
