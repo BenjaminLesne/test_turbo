@@ -7,6 +7,7 @@ export class HealthController {
 
   @Get()
   findAll() {
+    const stuff = ""
     return this.healthService.findAll();
   }
 }

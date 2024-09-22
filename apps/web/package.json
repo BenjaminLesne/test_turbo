@@ -21,7 +21,6 @@
     "zod": "^3.23.3"
   },
   "devDependencies": {
-    "@playwright/test": "^1.47.2",
     "@types/eslint": "^8.56.10",
     "@types/node": "^20.14.10",
     "@types/react": "^18.3.3",
@@ -30,7 +29,6 @@
     "@typescript-eslint/parser": "^8.1.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "^14.2.4",
-    "eslint-plugin-playwright": "^1.6.2",
     "postcss": "^8.4.39",
     "prettier": "^3.3.2",
     "prettier-plugin-tailwindcss": "^0.6.5",
