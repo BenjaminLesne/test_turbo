@@ -7,16 +7,16 @@ const project = resolve(process.cwd(), 'tsconfig.json');
 module.exports = {
   root: true,
   extends: [
+    "plugin:@typescript-eslint/recommended-type-checked",
+    "plugin:@typescript-eslint/stylistic-type-checked",
     // Turborepo custom eslint configuration configures the following rules:
     //  - https://github.com/vercel/turborepo/blob/main/packages/eslint-plugin-turbo/docs/rules/no-undeclared-env-vars.md
     'eslint-config-turbo',
-    // "plugin:@typescript-eslint/recommended-type-checked",
-    // "plugin:@typescript-eslint/stylistic-type-checked",
   ].map(require.resolve),
   parserOptions: {
     project,
   },
-  "parser": "@typescript-eslint/parser",
+  parser: "@typescript-eslint/parser",
   "plugins": [
     "@typescript-eslint"
   ],
