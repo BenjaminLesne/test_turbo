@@ -6,7 +6,6 @@
   "scripts": {
     "lint": "eslint \"src/**/*.ts\" --fix",
     "check-types": "tsc --noEmit",
-    "prepare": "cd ../.. && husky apps/web/.husky",
     "pre-push": "sh ./scripts/prevent-.only-page.pause-push.sh"
   },
   "dependencies": {

@@ -6,7 +6,7 @@
     "turbo:build": "turbo run build",
     "turbo:check-types": "turbo  run check-types",
     "turbo:lint": "turbo lint",
-    "prepare": "husky ./.husky",
+    "prepare": "husky",
     "pre-push": "sh ./scripts/prevent-.only-page.pause-push.sh",
     "docker:web": "docker compose up web",
     "e2e:update:snapshots": "docker compose up e2e --build --exit-code-from=e2e"

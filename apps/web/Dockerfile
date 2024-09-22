@@ -1,6 +1,5 @@
 FROM node:18-alpine AS base
 
-
 # hadolint ignore=DL3018
 RUN apk update && \
     apk add --no-cache libc6-compat curl && \
@@ -26,18 +25,5 @@ RUN pnpm install
 COPY --from=builder /code/out/full/ ./
 RUN pnpm turbo build --filter=web...
 
-# FROM base AS runner
-# WORKDIR /code
-
-# RUN addgroup --system --gid 1001 nodejs \
-#     && adduser --system --uid 1001 nextjs
-
-# USER nextjs
-
-# COPY --from=installer --chown=nextjs:nodejs /code/codes/web/.next/standalone ./
-# COPY --from=installer --chown=nextjs:nodejs /code/codes/web/.next/static ./codes/web/.next/static
-# COPY --from=installer --chown=nextjs:nodejs /code/codes/web/public ./codes/web/public
-
 WORKDIR /code/apps/web
 CMD ["pnpm", "run", "start"]
-# CMD ["node", "apps/web/server.js"]
