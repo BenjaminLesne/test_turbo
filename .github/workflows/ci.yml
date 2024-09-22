@@ -31,11 +31,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Run TypeScript type checking
+      - name: Check types
         run: pnpm run turbo:check-types
 
-      - name: Run linting
+      - name: lint
         run: pnpm run turbo:lint
 
-      - name: Run knip
-        run: pnpm turbo:knip
+      - name: Check dead code
+        run: pnpm knip
