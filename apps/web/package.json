@@ -9,7 +9,7 @@
     "lint": "next lint",
     "start": "next start",
     "check-types": "tsc --noEmit",
-    "docker": "docker build -t nextjs-docker . && docker run -p 3000:3000 nextjs-docker"
+    "docker": "cd ../../ && pnpm run docker:web && cd apps/web"
   },
   "dependencies": {
     "@repo/eslint-config": "workspace:*",

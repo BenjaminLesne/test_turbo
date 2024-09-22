@@ -1,4 +1,6 @@
 FROM node:18-alpine AS base
+ARG TURBO_TOKEN
+ARG TURBO_TEAM
 
 # hadolint ignore=DL3018
 RUN apk update && \
