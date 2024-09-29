@@ -17,6 +17,7 @@ module.exports = {
     // Turborepo custom eslint configuration configures the following rules:
     //  - https://github.com/vercel/turborepo/blob/main/packages/eslint-plugin-turbo/docs/rules/no-undeclared-env-vars.md
     require.resolve('eslint-config-turbo'),
+    "eslint:recommended",
     "plugin:@typescript-eslint/recommended-type-checked",
     "plugin:@typescript-eslint/stylistic-type-checked",
     "plugin:prettier/recommended", // should be last
