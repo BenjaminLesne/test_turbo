@@ -1,8 +1,8 @@
 module.exports = {
   extends: [
     // 'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-    '@repo/eslint-config/base.cjs',
+    // 'plugin:prettier/recommended',
+    "@repo/eslint-config/base.cjs",
   ],
   // parser: '@typescript-eslint/parser',
   parserOptions: {

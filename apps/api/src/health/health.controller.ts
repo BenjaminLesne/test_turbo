@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { HealthService } from './health.service';
+import { type HealthService } from './health.service';
 
 @Controller('health')
 export class HealthController {
@@ -7,7 +7,7 @@ export class HealthController {
 
   @Get()
   findAll() {
-    const stuff = ""
+    const stuff = '';
     return this.healthService.findAll();
   }
 }
