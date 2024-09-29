@@ -1,8 +1,8 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable } from "@nestjs/common";
 
 @Injectable()
 export class HealthService {
   findAll() {
-    return 'Hello world';
+    return "Hello world";
   }
 }

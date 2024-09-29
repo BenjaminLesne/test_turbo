@@ -19,7 +19,7 @@ module.exports = {
     require.resolve('eslint-config-turbo'),
     "plugin:@typescript-eslint/recommended-type-checked",
     "plugin:@typescript-eslint/stylistic-type-checked",
-    "plugin:prettier/recommended",
+    "plugin:prettier/recommended", // should be last
   ],
   parserOptions: {
     project,

@@ -7,12 +7,11 @@
     "allowJs": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "verbatimModuleSyntax": true,
     "noImplicitAny": true,
 
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
-    "checkJs": true,
+    "checkJs": true
   }
 }
