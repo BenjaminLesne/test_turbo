@@ -18,7 +18,7 @@ const config = {
   ],
   settings: {
     react: {
-      version: "detect", // Automatically detect the React version
+      version: "detect",
     },
     tailwindcss: {
       callees: ["classnames", "clsx", "ctl", "cn"],
