@@ -1,6 +1,7 @@
 import { expect } from "@playwright/test";
 import { testScreenshot, waitLoadingEnds } from "../lib/utils/tests";
 import { test } from "../lib/utils/fixtures";
+import { TAGS } from "@/lib/constants";
 
 test("has title", async ({ page }) => {
   await page.goto("https://playwright.dev/");
@@ -21,12 +22,16 @@ test("get started link", async ({ page }) => {
   ).toBeVisible();
 });
 
-test("snapshot on a very big screen", async ({ page, isMobile }) => {
-  test.skip(isMobile, "Desktop only!");
+test(
+  "snapshot on a very big screen",
+  { tag: TAGS.snapshot },
+  async ({ page, isMobile }) => {
+    test.skip(isMobile, "Desktop only!");
 
-  await page.setViewportSize({ width: 3840, height: 2160 });
+    await page.setViewportSize({ width: 3840, height: 2160 });
 
-  await waitLoadingEnds({ page });
+    await waitLoadingEnds({ page });
 
-  await testScreenshot({ page, target: page });
-});
+    await testScreenshot({ page, target: page });
+  },
+);
