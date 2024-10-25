@@ -1,42 +1,18 @@
-// {
-//   "extends": "@repo/typescript-config/tsconfig.json",
-//   "compilerOptions": {
-//     "module": "NodeNext",
-//     "declaration": true,
-//     "emitDecoratorMetadata": true,
-//     "experimentalDecorators": true,
-//     "allowSyntheticDefaultImports": true,
-//     "sourceMap": true,
-//     "outDir": "./dist",
-//     "baseUrl": "./",
-//     "incremental": true,
-//     "strictBindCallApply": false,
-//     "lib": ["es2022"]
-//   },
-//   "include": [".eslintrc.cjs", "**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.js"],
-//   "exclude": ["node_modules"]
-// }
-
 {
-  // "extends": "@repo/typescript-config/tsconfig.json",
+  "extends": "@repo/typescript-config/tsconfig.json",
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "CommonJS",
+    "skipLibCheck": false,
     "declaration": true,
-    "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "ES2021",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
-    "skipLibCheck": true,
-    "strictNullChecks": false,
-    "noImplicitAny": false,
     "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "lib": ["es2022"]
   },
   "include": [".eslintrc.cjs", "**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.js"],
   "exclude": ["node_modules"]
