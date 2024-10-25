@@ -1,38 +1,43 @@
+// {
+//   "extends": "@repo/typescript-config/tsconfig.json",
+//   "compilerOptions": {
+//     "module": "NodeNext",
+//     "declaration": true,
+//     "emitDecoratorMetadata": true,
+//     "experimentalDecorators": true,
+//     "allowSyntheticDefaultImports": true,
+//     "sourceMap": true,
+//     "outDir": "./dist",
+//     "baseUrl": "./",
+//     "incremental": true,
+//     "strictBindCallApply": false,
+//     "lib": ["es2022"]
+//   },
+//   "include": [".eslintrc.cjs", "**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.js"],
+//   "exclude": ["node_modules"]
+// }
+
 {
-  "extends": "@repo/typescript-config/tsconfig.json",
+  // "extends": "@repo/typescript-config/tsconfig.json",
   "compilerOptions": {
-    "module": "CommonJS",
-    "lib": ["es2022"],
+    "module": "commonjs",
     "declaration": true,
+    "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
+    "target": "ES2021",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
-    "strictBindCallApply": false
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false
   },
   "include": [".eslintrc.cjs", "**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.js"],
   "exclude": ["node_modules"]
 }
-
-// {
-//   "compilerOptions": {
-//     "module": "commonjs",
-//     "target": "ES2020",
-//     "moduleResolution": "Node",
-//     "sourceMap": true,
-//     "declaration": true,
-//     "outDir": "./dist",
-//     "esModuleInterop": true,
-//     "strict": true,
-//     "experimentalDecorators": true,
-//     "emitDecoratorMetadata": true,
-//     "strictPropertyInitialization": false,
-//     "skipLibCheck": true
-//   },
-//   "include": ["./src/**/*.ts", "__test__/controllers/health.controller.spec.ts"],
-//   "exclude": ["node_modules"]
-
-// }
