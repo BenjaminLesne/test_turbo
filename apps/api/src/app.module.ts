@@ -6,13 +6,13 @@ import { ConfigModule } from "@nestjs/config";
 import { envConfig } from "./config/configuration";
 
 @Module({
-  // imports: [
-  //   ConfigModule.forRoot({
-  //     isGlobal: true,
-  //     load: [envConfig],
-  //   }),
-  //   HealthModule,
-  // ],
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      load: [envConfig],
+    }),
+    HealthModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

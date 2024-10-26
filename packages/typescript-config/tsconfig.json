@@ -7,7 +7,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noImplicitAny": true,
-
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,

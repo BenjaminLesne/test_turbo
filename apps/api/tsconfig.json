@@ -2,7 +2,7 @@
   "extends": "@repo/typescript-config/tsconfig.json",
   "compilerOptions": {
     "module": "CommonJS",
-    "skipLibCheck": false,
+    "strictNullChecks": true,
     "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
