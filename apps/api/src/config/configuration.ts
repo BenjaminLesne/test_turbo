@@ -1,5 +1,9 @@
 import { z } from "zod";
 
-export const envConfig = () => ({
-  DATABASE_URL: z.string().url().parse(process.env.DATABASE_URL),
+const EnvSchema = z.object({
+  DATABASE_URL: z.string().url(),
 });
+
+export type Env = z.infer<typeof EnvSchema>;
+
+export const envConfig = () => EnvSchema.parse(process.env);
