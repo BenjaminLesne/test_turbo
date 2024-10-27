@@ -1,9 +1,17 @@
-import { Injectable } from "@nestjs/common";
+import { Inject, Injectable } from "@nestjs/common";
 import { CreateFeedbackDto } from "./dto/create-feedback.dto";
 import { UpdateFeedbackDto } from "./dto/update-feedback.dto";
+import { DATABASE_CONNECTION } from "src/database/connections";
+import type { NodePgDatabase } from "drizzle-orm/node-postgres";
+import type { feedbacks } from "./entities/schema";
 
 @Injectable()
 export class FeedbacksService {
+  constructor(
+    @Inject(DATABASE_CONNECTION)
+    private readonly database: NodePgDatabase<Record<string, typeof feedbacks>>,
+  ) {}
+
   create(createFeedbackDto: CreateFeedbackDto) {
     return "This action adds a new feedback";
   }

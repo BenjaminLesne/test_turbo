@@ -5,7 +5,7 @@ import { HealthModule } from "./health/health.module";
 import { ConfigModule } from "@nestjs/config";
 import { envConfig } from "./config/configuration";
 import { DatabaseModule } from "./database/database.module";
-import { FeedbacksModule } from './feedbacks/feedbacks.module';
+import { FeedbacksModule } from "./feedbacks/feedbacks.module";
 
 @Module({
   imports: [

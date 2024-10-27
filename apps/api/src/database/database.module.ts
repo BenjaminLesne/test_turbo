@@ -24,5 +24,6 @@ import { feedbacks } from "src/feedbacks/entities/schema";
       inject: [ConfigService],
     },
   ],
+  exports: [DATABASE_CONNECTION],
 })
 export class DatabaseModule {}
