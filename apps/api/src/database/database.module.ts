@@ -4,6 +4,7 @@ import { ConfigService } from "@nestjs/config";
 import { Pool } from "pg";
 import type { Env } from "src/config/configuration";
 import { drizzle } from "drizzle-orm/node-postgres";
+import { feedbacks } from "src/feedbacks/entities/schema";
 
 @Module({
   providers: [
@@ -15,7 +16,9 @@ import { drizzle } from "drizzle-orm/node-postgres";
         });
 
         return drizzle(pool, {
-          schema: {},
+          schema: {
+            ...feedbacks,
+          },
         });
       },
       inject: [ConfigService],
