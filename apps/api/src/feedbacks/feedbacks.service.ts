@@ -3,16 +3,19 @@ import { CreateFeedbackDto } from "./dto/create-feedback.dto";
 import { UpdateFeedbackDto } from "./dto/update-feedback.dto";
 import { DATABASE_CONNECTION } from "src/database/connections";
 import type { NodePgDatabase } from "drizzle-orm/node-postgres";
-import type { feedbacks } from "./entities/schema";
+import * as feedbacksSchemas from "./entities/schema";
 
 @Injectable()
 export class FeedbacksService {
   constructor(
     @Inject(DATABASE_CONNECTION)
-    private readonly database: NodePgDatabase<Record<string, typeof feedbacks>>,
+    private readonly database: NodePgDatabase<typeof feedbacksSchemas>,
   ) {}
 
   create(createFeedbackDto: CreateFeedbackDto) {
+    const feedbacksTable = feedbacksSchemas.feedbacks;
+    this.database.insert(feedbacksTable).values(createFeedbackDto);
+
     return "This action adds a new feedback";
   }
 
