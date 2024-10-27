@@ -17,6 +17,19 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+  database:
+    image: supabase/postgres
+    ports:
+      - "5432:5432"
+    command: postgres -c config_file=/etc/postgresql/postgresql.conf 
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: dev_database
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready", "-d", "dev_database"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
   api:
     build:
       context: .
@@ -35,6 +48,9 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    depends_on:
+      database:
+        condition: service_healthy
   e2e:
     build:
       context: .
@@ -53,5 +69,28 @@ services:
     volumes:
       - ./apps/e2e/src/tests:/code/apps/e2e/src/tests
       - ./apps/e2e/playwright-report:/code/apps/e2e/playwright-report
+
+
+# version: '3'
+
+# # Before supabase/postgres 14.1.0
+# services:
+#   db:
+#     image: supabase/postgres
+#     ports:
+#       - "5432:5432"
+#     environment:
+#       POSTGRES_PASSWORD: postgres
+
+# # supabase/postgres 14.1.0 and beyond
+# services:
+#   db:
+#     image: supabase/postgres
+#     ports:
+#       - "5432:5432"
+#     command: postgres -c config_file=/etc/postgresql/postgresql.conf 
+#     environment:
+#       POSTGRES_PASSWORD: postgres
+
 
 
