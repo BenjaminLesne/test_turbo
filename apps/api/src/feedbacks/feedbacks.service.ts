@@ -1,6 +1,5 @@
 import { Inject, Injectable } from "@nestjs/common";
 import { CreateFeedbackDto } from "./dto/create-feedback.dto";
-import { UpdateFeedbackDto } from "./dto/update-feedback.dto";
 import { DATABASE_CONNECTION } from "src/database/connections";
 import type { NodePgDatabase } from "drizzle-orm/node-postgres";
 import * as feedbacksSchemas from "./entities/schema";
@@ -14,9 +13,11 @@ export class FeedbacksService {
 
   create(createFeedbackDto: CreateFeedbackDto) {
     const feedbacksTable = feedbacksSchemas.feedbacks;
-    this.database.insert(feedbacksTable).values(createFeedbackDto);
+    const newFeedback = this.database
+      .insert(feedbacksTable)
+      .values(createFeedbackDto);
 
-    return "This action adds a new feedback";
+    return newFeedback;
   }
 
   findAll() {
@@ -27,9 +28,9 @@ export class FeedbacksService {
     return `This action returns a #${id} feedback`;
   }
 
-  update(id: number, updateFeedbackDto: UpdateFeedbackDto) {
-    return `This action updates a #${id} feedback`;
-  }
+  // update(id: number, updateFeedbackDto: UpdateFeedbackDto) {
+  //   return `This action updates a #${id} feedback`;
+  // }
 
   remove(id: number) {
     return `This action removes a #${id} feedback`;
