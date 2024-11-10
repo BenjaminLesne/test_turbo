@@ -1,3 +1,3 @@
 - [ ] Temporary work is deleted (commented code, useless console logs, etc.).
 - [ ] Tests have been added or updated when necessary.
-- [ ] [Bulletproof react architecture](https://github.com/alan2207/bulletproof-react/tree/master) has been followed
+- [ ] [Bulletproof react arc](https://github.com/alan2207/bulletproof-react/tree/master)
